@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A free, open-source single-page portfolio template with a cinematic loader, GSAP animations and a single file (src/data.js) that controls every word on the site. Replace the content, build, and ship.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "gen:photos": "node scripts/generate-placeholders.mjs",
+    "verify": "node scripts/verify.mjs",
+    "audit": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.62.1",
+    "vite": "^7.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

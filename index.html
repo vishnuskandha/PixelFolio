@@ -1,0 +1,446 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — a short description of your role, your experience and what you do. Edit this in src/data.js." />
+  <meta name="theme-color" content="#080808" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph (overridden from src/data.js → seo) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Portfolio of Your Name — a short description of your role, your experience and what you do. Edit this in src/data.js." />
+  <meta property="og:image" content="/photos/portrait-01.svg" />
+  <meta property="og:site_name" content="Your Name" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Name — Portfolio" />
+  <meta name="twitter:description" content="Portfolio of Your Name — a short description of your role, your experience and what you do." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Structured data — populated from src/data.js → seo.jsonLd -->
+  <script id="jsonLd" type="application/ld+json"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient film grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label"></span></span>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+
+  <!-- ── CINEMATIC LOADER ─────────────────────────────── -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__top">
+      <span class="loader__brand">YN<span>.</span></span>
+      <span class="loader__stage" data-text="site.loader.stage"></span>
+    </div>
+    <div class="loader__name">
+      <span class="loader__name-char" data-text="site.loader.name"></span>
+    </div>
+    <div class="loader__bottom">
+      <div class="loader__progress" aria-hidden="true"><span class="loader__progress-fill" id="loaderFill"></span></div>
+      <div class="loader__count-row">
+        <span class="loader__count" id="loaderCount">00</span>
+        <span class="loader__percent">%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HEADER ───────────────────────────────────────── -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" data-cursor-label="HOME">YN<span class="brand__dot">.</span></a>
+    <div class="site-header__meta" aria-hidden="true" data-text="site.header.meta"></div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menu">
+      <span class="menu-toggle__text" data-text="site.menuToggle">MENU</span>
+      <span class="menu-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </header>
+
+  <!-- ── FULLSCREEN MENU ─────────────────────────────── -->
+  <div class="menu" id="menu" aria-hidden="true" inert>
+    <nav class="menu__nav" aria-label="Primary">
+      <ul class="menu__list" id="menuList"></ul>
+    </nav>
+    <aside class="menu__side">
+      <div class="menu__side-block">
+        <p class="menu__side-label" data-text="site.menu.getInTouch">GET IN TOUCH</p>
+        <a class="menu__side-link" id="menuEmail" href="mailto:you@example.com" data-cursor-label="EMAIL"></a>
+      </div>
+      <div class="menu__side-block">
+        <p class="menu__side-label" data-text="site.menu.connect">CONNECT</p>
+        <div class="menu__socials" id="menuSocials"></div>
+      </div>
+    </aside>
+    <div class="menu__foot">
+      <span data-text="site.menu.foot.0"></span>
+      <span class="menu__foot-sep" aria-hidden="true">/</span>
+      <span data-text="site.menu.foot.1"></span>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__rld" id="heroRld" aria-hidden="true">YN</div>
+      <p class="hero__side-note" aria-hidden="true" data-text="site.hero.sideNote"></p>
+
+      <div class="hero__inner">
+        <p class="hero__label" data-text="site.hero.label"></p>
+
+        <h1 class="hero__title">
+          <span class="hero__line" data-hero-line data-text="site.hero.title.0"></span>
+          <span class="hero__line hero__line--alt" data-hero-line data-text="site.hero.title.1"></span>
+        </h1>
+
+        <p class="hero__statement" data-html="site.hero.statement"></p>
+
+        <div class="hero__meta">
+          <span class="hero__meta-item"><i aria-hidden="true"></i><span data-text="site.hero.meta.0"></span></span>
+          <span class="hero__meta-item"><i aria-hidden="true"></i><span data-text="site.hero.meta.1"></span></span>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#intro" data-cursor-label="SCROLL">
+        <span data-text="site.hero.scrollHint"></span>
+        <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- Hero tagline marquee -->
+    <div class="marquee marquee--hero" aria-hidden="true">
+      <div class="marquee__track" id="marqueeHero"></div>
+    </div>
+
+    <!-- ── INTRO ─────────────────────────────────────── -->
+    <section class="section intro" id="intro" aria-labelledby="intro-title">
+      <div class="section-head" data-reveal data-section="intro">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title intro__title" id="intro-title" data-split data-text="intro.title"></h2>
+
+      <div class="intro__grid">
+        <div class="intro__lead">
+          <p class="intro__dropcap" aria-hidden="true" data-text="intro.dropcap">R</p>
+          <div class="intro__body" id="introBody"></div>
+        </div>
+
+        <aside class="intro__aside">
+          <figure class="intro__portrait">
+            <div class="intro__portrait-frame">
+              <img src="/photos/portrait-01.svg" alt="" width="900" height="1200" loading="lazy" />
+              <span class="intro__portrait-tag" data-text="intro.portrait.tag"></span>
+            </div>
+          </figure>
+          <dl class="intro__facts" id="introFacts"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ── THE JOURNEY ───────────────────────────────── -->
+    <section class="section journey" id="journey" aria-labelledby="journey-title">
+      <div class="section-head" data-reveal data-section="journey">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title journey__title" id="journey-title" data-split data-text="journey.title"></h2>
+
+      <div class="journey__track">
+        <div class="journey__rail" aria-hidden="true"><span class="journey__rail-fill" id="journeyRailFill"></span></div>
+        <ol class="journey__list" id="journeyList"></ol>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ─────────────────────────────────── -->
+    <section class="section education" id="education" aria-labelledby="education-title">
+      <div class="section-head" data-reveal data-section="education">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <div class="education__head">
+        <h2 class="split-title education__title" id="education-title" data-split data-text="education.title"></h2>
+        <div class="education__meta">
+          <h3 class="education__degree"></h3>
+          <p class="education__school"></p>
+        </div>
+      </div>
+
+      <p class="education__desc" data-reveal></p>
+
+      <div class="education__achievements" id="educationAchievements" data-reveal></div>
+
+      <div class="kinetic" aria-hidden="true">
+        <div class="kinetic__row" id="kineticRowA"></div>
+      </div>
+      <div class="kinetic" aria-hidden="true">
+        <div class="kinetic__row" id="kineticRowB"></div>
+      </div>
+      <p class="kinetic__note" aria-hidden="true" data-text="education.kineticNote"></p>
+    </section>
+
+    <!-- ── EXPERIENCE ────────────────────────────────── -->
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section-head" data-reveal data-section="experience">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <header class="experience__head">
+        <h2 class="split-title experience__company" id="experience-title" data-split data-text="experience.company"></h2>
+        <div class="experience__facts">
+          <p class="experience__role" data-text="experience.role"></p>
+          <p class="experience__duration" data-text="experience.duration"></p>
+          <p class="experience__context" data-text="experience.context"></p>
+        </div>
+      </header>
+
+      <p class="experience__desc" data-reveal data-text="experience.description"></p>
+
+      <div class="experience__body">
+        <div class="experience__block">
+          <h3 class="experience__block-label" data-text="experience.whatIDid"></h3>
+          <ol class="experience__list" id="responsibilityList"></ol>
+        </div>
+        <div class="experience__block experience__block--quote">
+          <p class="experience__quote" data-text="experience.quote"></p>
+          <p class="experience__quote-note" data-text="experience.quoteNote"></p>
+        </div>
+      </div>
+
+      <div class="experience__skills" aria-label="Skills and tools used in this role" data-aria-label="experience.skillsLabel">
+        <div class="marquee marquee--skills" aria-hidden="true"><div class="marquee__track" id="skillsRowA"></div></div>
+        <div class="marquee marquee--skills marquee--reverse" aria-hidden="true"><div class="marquee__track" id="skillsRowB"></div></div>
+      </div>
+    </section>
+
+    <!-- ── EARLY EXPERIENCE ──────────────────────────── -->
+    <section class="section early" id="early" aria-labelledby="early-title">
+      <div class="section-head" data-reveal data-section="early">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title early__title" id="early-title" data-split data-text="earlyExperience.title"></h2>
+      <div class="early__list" id="earlyList"></div>
+    </section>
+
+    <!-- ── LEADERSHIP ────────────────────────────────── -->
+    <section class="section leadership" id="leadership" aria-labelledby="leadership-title">
+      <div class="section-head" data-reveal data-section="leadership">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <div class="leadership__grid">
+        <h2 class="split-title leadership__title" id="leadership-title" data-split data-text="leadership.role"></h2>
+        <div class="leadership__info">
+          <p class="leadership__org" data-text="leadership.organization"></p>
+          <p class="leadership__desc" data-reveal data-text="leadership.description"></p>
+          <ul class="leadership__list" id="leadershipList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CREATIVE ──────────────────────────────────── -->
+    <section class="section creative" id="creative" aria-labelledby="creative-title">
+      <div class="section-head" data-reveal data-section="creative">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title creative__statement" id="creative-title" data-split data-text="creative.statement"></h2>
+
+      <div class="creative__grid" id="creativeGrid"></div>
+
+      <div class="marquee marquee--creative" aria-hidden="true">
+        <div class="marquee__track" id="marqueeCreative"></div>
+      </div>
+    </section>
+
+    <!-- ── PHOTOGRAPHY ───────────────────────────────── -->
+    <section class="section photography" id="photography" aria-labelledby="photography-title">
+      <div class="photography__head">
+        <div>
+          <h2 class="split-title photography__title" id="photography-title" data-split data-text="photography.title"></h2>
+          <p class="photography__desc" data-reveal data-text="photography.description"></p>
+        </div>
+        <p class="photography__note" data-text="photography.note"></p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ── CINEMATIC ─────────────────────────────────── -->
+    <section class="section cinematic" id="cinematic" aria-labelledby="cinematic-title">
+      <div class="cinematic__frame" data-reveal>
+        <figure class="cinematic__img cinematic__img--main">
+          <img src="/photos/cinematic-01.svg" alt="Placeholder — cinematic frame. Replace with real work." width="1920" height="1080" loading="lazy" />
+        </figure>
+        <h2 class="split-title cinematic__title" id="cinematic-title" data-split data-text="cinematic.heading"></h2>
+      </div>
+
+      <div class="cinematic__under">
+        <p class="cinematic__desc" data-reveal data-text="cinematic.description"></p>
+        <ul class="cinematic__list" id="cinematicList"></ul>
+      </div>
+    </section>
+
+    <!-- ── CONTENT / THINK. MAKE. TELL. ───────────────── -->
+    <section class="section content" id="content" aria-labelledby="content-title">
+      <div class="content__pin">
+        <div class="content__track" id="contentTrack">
+          <div class="content__panel content__panel--intro">
+            <p class="content__label" data-text="content.label"></p>
+            <h2 class="split-title content__title" id="content-title" data-split data-text="content.heading"></h2>
+            <p class="content__intro" data-text="content.intro"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ────────────────────────────────────── -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="section-head" data-reveal data-section="skills">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title skills__title" id="skills-title" data-split data-text="skills.title"></h2>
+
+      <div class="skills__groups">
+        <div class="skills__group skills__group--pro">
+          <p class="skills__group-label" data-text="skills.groupLabels.0"></p>
+          <div class="skills__words" id="skillsPro"></div>
+        </div>
+        <div class="skills__group skills__group--tech">
+          <p class="skills__group-label" data-text="skills.groupLabels.1"></p>
+          <div class="skills__words" id="skillsTech"></div>
+        </div>
+        <div class="skills__group skills__group--creative">
+          <p class="skills__group-label" data-text="skills.groupLabels.2"></p>
+          <div class="skills__words" id="skillsCreative"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATION ─────────────────────────────── -->
+    <section class="section certification" id="certification" aria-labelledby="certification-title">
+      <div class="section-head" data-reveal data-section="certification">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <p class="certification__label" data-reveal data-text="certification.label"></p>
+      <h2 class="split-title certification__title" id="certification-title" data-split data-text="certification.title"></h2>
+
+      <div class="certification__under">
+        <p class="certification__meta" data-reveal data-text="certification.meta"></p>
+        <p class="certification__desc" data-reveal data-text="certification.description"></p>
+      </div>
+
+      <div class="certification__areas" id="certAreas"></div>
+    </section>
+
+    <!-- ── INTERESTS ─────────────────────────────────── -->
+    <section class="section interests" id="interests" aria-labelledby="interests-title">
+      <div class="section-head" data-reveal data-section="interests">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title interests__title" id="interests-title" data-split data-text="interests.title"></h2>
+      <div class="interests__list" id="interestsList"></div>
+    </section>
+
+    <!-- ── WHY WORK WITH ME ──────────────────────────── -->
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <p class="why__label" id="why-title" data-reveal data-text="sections.why.label"></p>
+      <div class="why__list" id="whyList"></div>
+    </section>
+
+    <!-- ── WHAT'S NEXT ───────────────────────────────── -->
+    <section class="section next" id="next" aria-labelledby="next-title">
+      <div class="section-head" data-reveal data-section="next">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title next__title" id="next-title" data-split data-text="nextChapter.heading"></h2>
+      <p class="next__text" data-reveal data-text="nextChapter.text"></p>
+
+      <div class="next__areas" id="nextAreas"></div>
+    </section>
+
+    <!-- ── CONTACT ───────────────────────────────────── -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-head" data-reveal data-section="contact">
+        <span class="section-head__num"></span>
+        <span class="section-head__slash" aria-hidden="true">/</span>
+        <span class="section-head__label"></span>
+        <span class="section-head__line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="split-title contact__title" id="contact-title" data-split data-text="contact.title"></h2>
+      <p class="contact__text" data-reveal data-text="contact.text"></p>
+
+      <a class="contact__email" id="contactEmail" href="mailto:you@example.com" data-cursor-label="EMAIL"></a>
+
+      <div class="contact__socials" id="contactSocials"></div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <a class="site-footer__brand" href="#home" data-cursor-label="TOP">YN<span>.</span></a>
+      <a class="site-footer__top-link" href="#home" data-cursor-label="TOP"><span data-text="site.footer.topLink"></span> <span aria-hidden="true">↑</span></a>
+    </div>
+    <p class="site-footer__name" data-text="site.footer.name"></p>
+    <p class="site-footer__line" data-text="site.footer.line"></p>
+    <p class="site-footer__copy">© 2026 YOUR NAME — BUILT WITH PURPOSE.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
