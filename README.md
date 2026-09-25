@@ -1,5 +1,15 @@
 # Portfolio Template
 
+
+<!-- README polish: repository metadata badges -->
+<p>
+  <a href="https://github.com/vishnuskandha/PixelFolio"><img alt="GitHub stars" src="https://img.shields.io/github/stars/vishnuskandha/PixelFolio?style=for-the-badge&logo=github&label=Stars"></a>
+  <a href="https://github.com/vishnuskandha/PixelFolio/fork"><img alt="GitHub forks" src="https://img.shields.io/github/forks/vishnuskandha/PixelFolio?style=for-the-badge&logo=github&label=Forks"></a>
+  <a href="https://github.com/vishnuskandha/PixelFolio/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/vishnuskandha/PixelFolio?style=for-the-badge&logo=github&label=Issues"></a>
+  <a href="https://github.com/vishnuskandha/PixelFolio/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/vishnuskandha/PixelFolio?style=for-the-badge&logo=git&label=Updated"></a>
+</p>
+<!-- End README polish -->
+
 A free, open-source, single-page portfolio with a cinematic loader, GSAP scroll animations and **one file that controls every word on the site** — `src/data.js`. No HTML or JavaScript knowledge needed to make it yours.
 
 ![Portfolio template](public/photos/portrait-01.svg)
